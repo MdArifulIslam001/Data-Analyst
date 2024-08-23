@@ -1,0 +1,96 @@
+
+Table 1 Query:
+Create Table EmployeeDemographics 
+(EmployeeID int, 
+FirstName varchar(50), 
+LastName varchar(50), 
+Age int, 
+Gender varchar(50)
+)
+
+Table 2 Query:
+Create Table EmployeeSalary 
+(EmployeeID int, 
+JobTitle varchar(50), 
+Salary int
+)
+
+
+
+Table 1 Insert:
+Insert into EmployeeDemographics VALUES
+(1001, 'Jim', 'Halpert', 30, 'Male'),
+(1002, 'Pam', 'Beasley', 30, 'Female'),
+(1003, 'Dwight', 'Schrute', 29, 'Male'),
+(1004, 'Angela', 'Martin', 31, 'Female'),
+(1005, 'Toby', 'Flenderson', 32, 'Male'),
+(1006, 'Michael', 'Scott', 35, 'Male'),
+(1007, 'Meredith', 'Palmer', 32, 'Female'),
+(1008, 'Stanley', 'Hudson', 38, 'Male'),
+(1009, 'Kevin', 'Malone', 31, 'Male')
+
+Table 2 Insert:
+Insert Into EmployeeSalary VALUES
+(1001, 'Salesman', 45000),
+(1002, 'Receptionist', 36000),
+(1003, 'Salesman', 63000),
+(1004, 'Accountant', 47000),
+(1005, 'HR', 50000),
+(1006, 'Regional Manager', 65000),
+(1007, 'Supplier Relations', 41000),
+(1008, 'Salesman', 48000),
+(1009, 'Accountant', 42000)
+
+
+Video_02
+Select *
+From EmployeeDemographiscs
+- select Distinct()
+- select Count() AS LastNameCount
+- 
+
+Select *
+From EmployeeSalary
+- select MAX()
+- Select MIN()
+-Select AVG()
+
+Video_03:
+Select *
+From EmployeeDemographics
+- Where FirstName = 'Jim'
+- Where FirstName <> 'Jim' ---- Not equal to Jim
+- Where Age > 30
+- Where Age >= 30
+- Where Age < 30
+- WHERE Age <= 32 AND Gender = 'Male' --- Both must be true
+- WHERE Age <= 32 OR Gender = 'Male'  --- any of one could be true
+- WHERE LastName  LIKE 'S%' -- Start with 'S'
+- WHERE LastName  LIKE '%S%'  --- Anywhere of the 'S' 
+- WHERE LastName  LIKE 'S%c%ott%' -- 
+- WHERE FirstName is NOT NULL 
+- WHERE FirstName IN ('Jim', 'Angela')  -- Equal for mutiple times 
+
+Video_04:
+SELECT Gender, COUNT(Gender)
+FROM EmployeeDemographics
+GROUP BY Gender
+
+- SELECT Gender, COUNT(Gender)
+FROM EmployeeDemographics
+WHERE Age > 31
+GROUP BY Gender
+
+- SELECT Gender, COUNT(Gender) AS CountGender
+FROM EmployeeDemographics
+WHERE Age > 31
+GROUP BY Gender
+ORDER BY CountGender DESC
+
+-SELECT *
+FROM EmployeeDemographics
+ORDER BY Age DESC
+
+-SELECT *
+FROM EmployeeDemographics
+ORDER BY 4 DESC, 5 -- Grouped By Colonm Number Which is very usefull.
